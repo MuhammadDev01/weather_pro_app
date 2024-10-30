@@ -5,7 +5,6 @@ class DioHelper {
   static Dio dio = Dio();
   static String baseUrl = 'https://api.weatherapi.com/v1';
 
-  //the api was expired
   static String apiKey = '871ad3e3096a4a3c85501214230803';
 
   static Future<Response<dynamic>?> getWeather(String cityName, context) async {
@@ -18,14 +17,14 @@ class DioHelper {
       debugPrint('errorFromApi : $error');
       showDialog(
         context: context,
-        builder: (context) =>  AlertDialog(
+        builder: (context) => AlertDialog(
           title: const Center(child: Text('Invaild City Name')),
           icon: Stack(
-            alignment:  AlignmentDirectional.topEnd,
+            alignment: AlignmentDirectional.topEnd,
             children: [
               IconButton(
                 icon: const Icon(Icons.close),
-                onPressed: (){
+                onPressed: () {
                   Navigator.pop(context);
                 },
               ),

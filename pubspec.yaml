@@ -26,6 +26,12 @@ environment:
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
+flutter_assets:
+  assets_path: assets/images/
+  output_path: lib/constants/
+  filename: app_images.dart
+  field_prefix: 
+  ignore_comments: true
 dependencies:
   flutter:
     sdk: flutter
