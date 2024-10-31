@@ -18,7 +18,7 @@ class HomeView extends StatelessWidget {
             padding: const EdgeInsets.all(20.0),
             child: Row(
               children: [
-                weatherCustomDrawer(),
+                const WeatherCustomDrawer(),
                 Expanded(
                   child: Container(
                     color: colorWeatherBackground,
