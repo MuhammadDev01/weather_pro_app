@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/cubit/search_cubit.dart';
-import 'package:weather_app/views/home_view.dart';
+import 'package:weather_app/views/weather_home_view.dart';
 
 void main() {
   runApp(
