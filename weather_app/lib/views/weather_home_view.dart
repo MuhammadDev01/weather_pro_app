@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/constants/constants.dart';
-import 'package:weather_app/views/search_bar.dart';
+import 'package:weather_app/views/my_city_weather_condition_view.dart';
+import 'package:weather_app/widgets/search_bar.dart';
 
 class WeatherHomeView extends StatefulWidget {
   const WeatherHomeView({super.key});
@@ -22,6 +23,7 @@ class _WeatherHomeViewState extends State<WeatherHomeView> {
         child: Column(
           children: [
             searchBar(formkey: formKey),
+            Expanded(child: MyCityWeatherConditionView()),
           ],
         ),
       ),
