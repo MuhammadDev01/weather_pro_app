@@ -8,9 +8,9 @@ class WeatherHomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 20),
+      padding: const EdgeInsets.only(left: 20),
       color: colorWeatherBackground,
-      child: MyCityWeatherConditionView(),
+      child: const MyCityWeatherConditionView(),
     );
   }
 }

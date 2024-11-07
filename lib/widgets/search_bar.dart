@@ -6,12 +6,7 @@ Widget searchBar({
   required GlobalKey<FormState> formkey,
 }) {
   return TextFormField(
-    onFieldSubmitted: (value) {
-      if (formkey.currentState!.validate()) {
-        print('object');
-      }
-    },
-    style: TextStyle(color: Colors.white),
+    style: const TextStyle(color: Colors.white),
     cursorColor: Colors.white,
     validator: (value) {
       if (value!.isEmpty) {
@@ -26,15 +21,15 @@ Widget searchBar({
       filled: true,
       fillColor: colorForecastBackground,
       border: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.transparent),
+        borderSide: const BorderSide(color: Colors.transparent),
         borderRadius: BorderRadius.circular(12),
       ),
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.transparent),
+        borderSide: const BorderSide(color: Colors.transparent),
         borderRadius: BorderRadius.circular(12),
       ),
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.transparent),
+        borderSide: const BorderSide(color: Colors.transparent),
         borderRadius: BorderRadius.circular(12),
       ),
     ),

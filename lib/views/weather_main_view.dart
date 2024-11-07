@@ -8,13 +8,13 @@ class WeatherMainView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: colorWeatherBackground,
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(20.0),
         child: Row(
           children: [
-            const WeatherCustomDrawer(),
+            WeatherCustomDrawer(),
             Expanded(child: WeatherHomeView()),
           ],
         ),

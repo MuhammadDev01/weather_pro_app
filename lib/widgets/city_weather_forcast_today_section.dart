@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/constants/app_style.dart';
 import 'package:weather_app/constants/constants.dart';
 
-Widget CityTodayForecastSection() {
+Widget cityTodayForecastSection() {
   return Container(
     width: 600,
     decoration: BoxDecoration(
@@ -23,7 +23,7 @@ Widget CityTodayForecastSection() {
               color: Colors.white.withOpacity(0.7),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Row(
@@ -39,14 +39,14 @@ Widget CityTodayForecastSection() {
 
 Widget _todayForcastItemBuilder() {
   return Container(
-    decoration: BoxDecoration(
+    decoration: const BoxDecoration(
       border: Border(
         right: BorderSide(
           color: Colors.white10,
         ),
       ),
     ),
-    child: Column(
+    child: const Column(
       children: [
         Text(
           "6:00 pm",

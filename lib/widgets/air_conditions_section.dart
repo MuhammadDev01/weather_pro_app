@@ -4,8 +4,8 @@ import 'package:weather_app/constants/constants.dart';
 
 Widget airConditionsSection() => Expanded(
   child: Container(
-        margin: EdgeInsets.only(top: 20, right: 20),
-        padding: EdgeInsets.all(20),
+        margin: const EdgeInsets.only(top: 20, right: 20),
+        padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: colorForecastBackground,
           borderRadius: BorderRadius.circular(20),
@@ -16,14 +16,14 @@ Widget airConditionsSection() => Expanded(
             _airconditionsTitleAndButton(),
             Expanded(
               child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 1,
                   mainAxisSpacing: 1,
                   // childAspectRatio: 1,
                 ),
                 itemCount: 4,
-                itemBuilder: (context, index) => SizedBox(
+                itemBuilder: (context, index) => const SizedBox(
                   height: 50,
                   child: ListTile(
                     leading: Icon(Icons.airline_seat_flat_angled),
@@ -55,15 +55,15 @@ Row _airconditionsTitleAndButton() {
           fontFamily: fontItim,
         ),
       ),
-      Spacer(),
+      const Spacer(),
       ElevatedButton(
         onPressed: () {},
-        child: Text(
+        child: const Text(
           'see more',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: 14,
           ),
           backgroundColor: Colors.blue,

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/constants/app_style.dart';
-import 'package:weather_app/constants/constants.dart';
 import 'package:weather_app/widgets/air_conditions_section.dart';
 import 'package:weather_app/widgets/city_weather_forcast_today_section.dart';
 import 'package:weather_app/widgets/city_weather_degree_section.dart';
@@ -30,8 +28,8 @@ class _MyCityWeatherConditionViewState
             child: Column(
               children: [
                 searchBar(formkey: formKey),
-                CityWeatherDegreeSection(),
-                CityTodayForecastSection(),
+                cityWeatherDegreeSection(),
+                cityTodayForecastSection(),
                 airConditionsSection(),
               ],
             ),

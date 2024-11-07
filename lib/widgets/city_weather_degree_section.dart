@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/constants/app_style.dart';
 
-Widget CityWeatherDegreeSection() {
+Widget cityWeatherDegreeSection() {
   return SizedBox(
     height: 200,
     child: ListTile(
       
-      contentPadding: EdgeInsets.symmetric(horizontal: 30),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 30),
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -17,11 +17,11 @@ Widget CityWeatherDegreeSection() {
               fontSize: 30,
             ),
           ),
-          Text(
+          const Text(
             'chance of rain: 0%',
             style: AppStyle.styleRegular14,
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
         ],
@@ -34,7 +34,7 @@ Widget CityWeatherDegreeSection() {
           color: Colors.white.withOpacity(0.7),
         ),
       ),
-      trailing: Icon(
+      trailing: const Icon(
         Icons.sunny,
         size: 60,
         color: Colors.amber,
