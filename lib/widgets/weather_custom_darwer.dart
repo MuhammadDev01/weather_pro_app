@@ -1,65 +1,58 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:weather_app/constants/app_images.dart';
 import 'package:weather_app/constants/app_style.dart';
 import 'package:weather_app/constants/constants.dart';
+import 'package:weather_app/cubit/weather_cubit/weather_cubit.dart';
 
-class WeatherCustomDrawer extends StatefulWidget {
+class WeatherCustomDrawer extends StatelessWidget {
   const WeatherCustomDrawer({super.key});
 
   @override
-  State<WeatherCustomDrawer> createState() => _WeatherCustomDrawerState();
-}
-
-class _WeatherCustomDrawerState extends State<WeatherCustomDrawer> {
-  int selectedItem = -1;
-
-  void selectDrawerItem(int index) {
-    setState(() {
-      selectedItem = index;
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 100,
-      decoration: BoxDecoration(
-        color: colorForecastBackground,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Column(
-        children: [
-          const SizedBox(height: 40),
-          Image.asset(
-            Assets.imagesLogoNoBackground,
-            height: 50,
-            width: 50,
+    return BlocBuilder<WeatherCubit, WeatherStates>(
+      builder: (context, state) {
+        return Container(
+          width: 100,
+          decoration: BoxDecoration(
+            color: colorForecastBackground,
+            borderRadius: BorderRadius.circular(20),
           ),
-          const SizedBox(height: 60),
-          _weatherDrawerItem(
-            onTap: () => selectDrawerItem(0),
-            name: 'Weather',
-            icon: FontAwesomeIcons.cloudSunRain,
-            isSelected: selectedItem == 0,
+          child: Column(
+            children: [
+              const SizedBox(height: 40),
+              Image.asset(
+                Assets.imagesLogoNoBackground,
+                height: 50,
+                width: 50,
+              ),
+              const SizedBox(height: 60),
+              _weatherDrawerItem(
+                onTap: () => WeatherCubit.get(context).changePage(0),
+                name: 'Weather',
+                icon: FontAwesomeIcons.cloudSunRain,
+                isSelected: WeatherCubit.get(context).currentPage == 0,
+              ),
+              const SizedBox(height: 30),
+              _weatherDrawerItem(
+                onTap: () => WeatherCubit.get(context).changePage(1),
+                name: 'Cities',
+                icon: FontAwesomeIcons.city,
+                isSelected: WeatherCubit.get(context).currentPage == 1,
+              ),
+              const SizedBox(height: 30),
+              _weatherDrawerItem(
+                onTap: () => WeatherCubit.get(context).changePage(2),
+                name: 'Settings',
+                icon: Icons.tune,
+                isSelected: WeatherCubit.get(context).currentPage == 2,
+              ),
+              const SizedBox(height: 30),
+            ],
           ),
-          const SizedBox(height: 30),
-          _weatherDrawerItem(
-            onTap: () => selectDrawerItem(1),
-            name: 'Cities',
-            icon: FontAwesomeIcons.city,
-            isSelected: selectedItem == 1,
-          ),
-          const SizedBox(height: 30),
-          _weatherDrawerItem(
-            onTap: () => selectDrawerItem(2),
-            name: 'Settings',
-            icon: Icons.tune,
-            isSelected: selectedItem == 2,
-          ),
-          const SizedBox(height: 30),
-        ],
-      ),
+        );
+      },
     );
   }
 

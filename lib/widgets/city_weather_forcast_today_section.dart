@@ -29,7 +29,7 @@ Widget todayForecastCitySection() {
           Row(
               children: List.generate(
             7,
-            (index) => Expanded(child: _todayForcastItemBuilder()),
+            (index) => Expanded(child: _todayForcastItemBuilder(index)),
           ))
         ],
       ),
@@ -37,14 +37,16 @@ Widget todayForecastCitySection() {
   );
 }
 
-Widget _todayForcastItemBuilder() {
+Widget _todayForcastItemBuilder(int index) {
   return Container(
-    decoration: const BoxDecoration(
-      border: Border(
-        right: BorderSide(
-          color: Colors.white10,
-        ),
-      ),
+    decoration: BoxDecoration(
+      border: index != 6
+          ? const Border(
+              right: BorderSide(
+                color: Colors.white10,
+              ),
+            )
+          : null,
     ),
     child: const Column(
       children: [
