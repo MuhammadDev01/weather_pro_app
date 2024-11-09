@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/constants/app_style.dart';
 import 'package:weather_app/constants/constants.dart';
 
-Widget cityTodayForecastSection() {
+Widget todayForecastCitySection() {
   return Container(
-    width: 600,
+    margin: const EdgeInsets.only(right: 20),
     decoration: BoxDecoration(
       color: colorForecastBackground,
       borderRadius: BorderRadius.circular(12),

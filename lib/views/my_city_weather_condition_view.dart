@@ -29,7 +29,7 @@ class _MyCityWeatherConditionViewState
               children: [
                 searchBar(formkey: formKey),
                 cityWeatherDegreeSection(),
-                cityTodayForecastSection(),
+                todayForecastCitySection(),
                 airConditionsSection(),
               ],
             ),
